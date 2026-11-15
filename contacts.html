@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты — БухПартнет, г. Великий Новгород</title>
+    <meta name="description" content="Контакты БухПартнет: телефон, email, адрес в Великом Новгороде, реквизиты, часы работы. Свяжитесь с нами для бухгалтерского сопровождения.">
+    <meta name="author" content="БухПартнет">
+    <link rel="canonical" href="https://buhpartner.ru/contacts.html">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #0F172A;
+            background-color: #ffffff;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 { color: #0B1F3A; font-weight: 700; letter-spacing: -0.025em; }
+        h1 { font-size: 3rem; line-height: 1.1; }
+        h2 { font-size: 2.25rem; text-align: center; margin-bottom: 48px; }
+        h3 { font-size: 1.5rem; }
+        p { color: #475569; margin-bottom: 16px; }
+        a { color: #12365F; text-decoration: none; }
+        a:hover { color: #0E7490; text-decoration: underline; }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0B1F3A 0%, #12365F 100%);
+            color: #fff;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            opacity: 0.5;
+        }
+        .hero h1 { color: #fff; font-size: 3.5rem; margin-bottom: 24px; position: relative; z-index: 2; }
+        .hero p { color: rgba(255,255,255,0.85); font-size: 1.25rem; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; position: relative; z-index: 2; }
+
+        .btn-primary {
+            background-color: #12365F;
+            color: #fff;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary:hover { background-color: #1E4A7E; transform: translateY(-1px); }
+
+        /* Контент */
+        .contacts-section { padding: 100px 0; background: #F8FAFC; }
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-top: 48px;
+        }
+
+        .contact-info h2 { text-align: left; margin-bottom: 32px; font-size: 2rem; }
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            align-items: flex-start;
+        }
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #12365F;
+            font-size: 1.25rem;
+        }
+        .contact-item div h4 { font-size: 1rem; margin-bottom: 4px; color: #0B1F3A; }
+        .contact-item div p { font-size: 0.95rem; color: #475569; margin: 0; }
+
+        .working-hours {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 32px;
+        }
+        .working-hours h3 { margin-bottom: 16px; font-size: 1.125rem; }
+        .working-hours p { margin: 8px 0; font-size: 0.95rem; }
+
+        .map-section {
+            background: #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+        }
+
+        .requisites {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 32px;
+        }
+        .requisites h3 { margin-bottom: 16px; font-size: 1.125rem; }
+        .req-item { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.95rem; color: #475569; }
+        .req-item strong { color: #0B1F3A; }
+
+        /* Форма на странице контактов */
+        .contact-form {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 48px;
+            box-shadow: 0 10px 30px rgba(11, 31, 58, 0.08);
+        }
+        .contact-form h2 { text-align: left; margin-bottom: 32px; font-size: 2rem; }
+        .form-group { margin-bottom: 24px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: #0F172A; text-transform: uppercase; letter-spacing: 0.05em; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 12px 16px; border: 1px solid #e2e8f0; border-radius: 8px;
+            font-size: 1rem; background: #fff; transition: all 0.25s ease; color: #0F172A; font-family: inherit;
+        }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #12365F; box-shadow: 0 0 0 3px rgba(18, 54, 95, 0.1); }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .checkbox-group { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 24px; }
+        .checkbox-group input { width: auto; margin-top: 3px; }
+        .checkbox-group label { font-size: 0.85rem; color: #475569; line-height: 1.5; margin-bottom: 0; text-transform: none; letter-spacing: normal; }
+        .checkbox-group a { color: #12365F; text-decoration: underline; }
+        .btn-submit { width: 100%; padding: 16px; font-size: 1rem; background: #12365F; color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.25s ease; }
+        .btn-submit:hover { background: #1E4A7E; }
+
+        /* Тост */
+        .toast {
+            position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px);
+            background: #0B1F3A; color: #fff; padding: 16px 24px; border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(11, 31, 58, 0.2); z-index: 2000; opacity: 0;
+            transition: all 0.4s ease; pointer-events: none;
+        }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .contacts-grid { grid-template-columns: 1fr; gap: 32px; }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.75rem; }
+            .contact-form { padding: 32px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Свяжитесь с нами</h1>
+            <p>Офис БухПартнет в Великом Новгороде. Мы ответим на ваши вопросы и поможем подобрать тариф.</p>
+            <a href="tel:+79506808866" class="btn-primary">Позвонить: +7 950 680 8866</a>
+        </div>
+    </header>
+
+    <section class="contacts-section">
+        <div class="container">
+            <div class="contacts-grid">
+                <div class="contact-info">
+                    <h2>Контакты БухПартнет</h2>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Адрес офиса</h4>
+                            <p>г. Великий Новгород, ул. Финансовая, д. 10</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Телефон</h4>
+                            <p><a href="tel:+79506808866">+7 950 680 8866</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p><a href="mailto:info@buhpartner.ru">info@buhpartner.ru</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💬</div>
+                        <div>
+                            <h4>Telegram</h4>
+                            <p><a href="https://t.me/buhpartner" target="_blank">@buhpartner</a></p>
+                        </div>
+                    </div>
+
+                    <div class="working-hours">
+                        <h3>Часы работы</h3>
+                        <p>Пн–Пт: 9:00 — 18:00</p>
+                        <p>Сб–Вс: выходной</p>
+                        <p>Время по MSK</p>
+                    </div>
+
+                    <div class="requisites">
+                        <h3>Реквизиты</h3>
+                        <div class="req-item"><strong>ООО «БухПартнет»</strong></div>
+                        <div class="req-item"><strong>ИНН:</strong> <span>5305012345</span></div>
+                        <div class="req-item"><strong>ОГРН:</strong> <span>1235301234567</span></div>
+                        <div class="req-item"><strong>КПП:</strong> <span>530501001</span></div>
+                        <div class="req-item"><strong>Расчётный счёт:</strong> <span>40702812345678901234</span></div>
+                        <div class="req-item"><strong>Банк:</strong> <span>АО «НовгородБанк», г. Великий Новгород</span></div>
+                        <div class="req-item"><strong>БИК:</strong> <span>044925123</span></div>
+                        <p style="margin-top: 16px; font-size: 0.85rem; color: #64748b;">* Реквизиты приведены в ознакомительных целях. Точные данные уточняйте в договоре.</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2>Напишите нам</h2>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="ct-name">Имя</label>
+                            <input type="text" id="ct-name" placeholder="Иван Иванов" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ct-phone">Телефон</label>
+                            <input type="tel" id="ct-phone" placeholder="+7 900 000 00 00" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ct-email">E-mail</label>
+                            <input type="email" id="ct-email" placeholder="ivan@example.ru">
+                        </div>
+                        <div class="form-group">
+                            <label for="ct-message">Сообщение</label>
+                            <textarea id="ct-message" placeholder="Расскажите о вашей задаче"></textarea>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="ct-agree" required>
+                            <label for="ct-agree">
+                                Я согласен на обработку персональных данных. <a href="privacy-policy.html">Политика конфиденциальности</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn-submit">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Уведомление -->
+    <div class="toast" id="toast">Сообщение отправлено. Мы свяжемся с вами!</div>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const toast = document.getElementById('toast');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            console.log('Сообщение:', data);
+
+            toast.classList.add('show');
+            setTimeout(() => { toast.classList.remove('show'); }, 4000);
+            form.reset();
+        });
+    </script>
+</body>
+</html>
