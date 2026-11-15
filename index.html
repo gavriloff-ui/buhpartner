@@ -1019,6 +1019,209 @@
                 text-align: center;
             }
         }
+
+        /* --- Модальное окно лид-магнита --- */
+        .lead-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(11, 31, 58, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 4000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .lead-modal-overlay.show {
+            display: flex;
+        }
+
+        .lead-modal {
+            background: #ffffff;
+            border-radius: 16px;
+            max-width: 520px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(11, 31, 58, 0.3);
+        }
+
+        .lead-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: transparent;
+            font-size: 1.5rem;
+            color: #94a3b8;
+            cursor: pointer;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lead-modal-close:hover {
+            color: #0F172A;
+        }
+
+        .lead-modal-header {
+            padding: 32px 32px 24px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .lead-modal-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .lead-modal-header p {
+            color: #475569;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .lead-modal-body {
+            padding: 32px;
+        }
+
+        .lead-modal .form-group {
+            margin-bottom: 20px;
+        }
+
+        .lead-modal .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #0F172A;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .lead-modal .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #fff;
+            color: #0F172A;
+            font-family: inherit;
+        }
+
+        .lead-modal .form-group input:focus {
+            outline: none;
+            border-color: #12365F;
+            box-shadow: 0 0 0 3px rgba(18, 54, 95, 0.1);
+        }
+
+        .lead-modal .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .lead-modal .checkbox-group input {
+            width: auto;
+            margin-top: 3px;
+        }
+
+        .lead-modal .checkbox-group label {
+            font-size: 0.85rem;
+            color: #475569;
+            line-height: 1.4;
+            margin-bottom: 0;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+        .lead-modal .checkbox-group a {
+            color: #12365F;
+            text-decoration: underline;
+        }
+
+        .lead-modal .btn-submit {
+            width: 100%;
+            padding: 14px;
+            font-size: 1rem;
+            background: #12365F;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .lead-modal .btn-submit:hover {
+            background: #1E4A7E;
+        }
+
+        .lead-success {
+            padding: 40px 32px;
+            text-align: center;
+            display: none;
+        }
+
+        .lead-success.show {
+            display: block;
+        }
+
+        .lead-success-icon {
+            width: 64px;
+            height: 64px;
+            background: #e2f5e9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: #0E7490;
+            font-size: 1.5rem;
+        }
+
+        .lead-success h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .lead-success p {
+            color: #475569;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .lead-success .btn-download {
+            display: inline-block;
+            background: #12365F;
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .lead-success .btn-download:hover {
+            background: #1E4A7E;
+        }
+
+        @media (max-width: 768px) {
+            .lead-modal {
+                margin: 16px;
+                max-height: 95vh;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1029,6 +1232,7 @@
             <h1>Ваш бизнес под надежной финансовой защитой</h1>
             <p>Профессиональное бухгалтерское сопровождение для ИП и ООО. Мы берем на себя учет, налоги и взаимодействие с ФНС.</p>
             <a href="#calculator" class="btn-primary">Рассчитать стоимость услуг</a>
+            <a href="#" class="btn-primary" style="margin-left: 16px; background: transparent; border: 2px solid rgba(255,255,255,0.5); color: #fff;" onclick="event.preventDefault(); openLeadModal()">Получить чек-лист бесплатно</a>
         </div>
     </header>
 
@@ -1450,6 +1654,73 @@
         pdBanner.querySelector('.pd-btn-accept').addEventListener('click', () => {
             localStorage.setItem('pd_accepted', 'true');
             pdBanner.classList.remove('show');
+        });
+
+        // Модальное окно лид-магнита
+        const leadModalOverlay = document.createElement('div');
+        leadModalOverlay.className = 'lead-modal-overlay';
+        leadModalOverlay.innerHTML = `
+            <div class="lead-modal">
+                <button class="lead-modal-close" onclick="closeLeadModal()">×</button>
+                <div class="lead-modal-header">
+                    <h2>Бесплатный чек-лист</h2>
+                    <p>Как подготовить документы к налоговой проверке и избежать штрафов</p>
+                </div>
+                <div class="lead-modal-body">
+                    <form id="lead-form">
+                        <div class="form-group">
+                            <label for="lead-name">Имя</label>
+                            <input type="text" id="lead-name" placeholder="Иван Иванов" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lead-email">E-mail</label>
+                            <input type="email" id="lead-email" placeholder="ivan@example.ru" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lead-phone">Телефон</label>
+                            <input type="tel" id="lead-phone" placeholder="+7 900 000 00 00">
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="lead-agree" required>
+                            <label for="lead-agree">
+                                Я согласен на обработку персональных данных. <a href="privacy-policy.html" target="_blank">Политика конфиденциальности</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn-submit">Получить чек-лист</button>
+                    </form>
+                </div>
+                <div class="lead-success" id="lead-success">
+                    <div class="lead-success-icon">✓</div>
+                    <h3>Чек-лист отправлен на вашу почту</h3>
+                    <p>Проверьте папку «Входящие» или «Спам». Если письма нет — напишите нам на info@buhpartner.ru</p>
+                    <a href="checklist.html" class="btn-download">Скачать чек-лист</a>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(leadModalOverlay);
+
+        window.openLeadModal = () => {
+            leadModalOverlay.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeLeadModal = () => {
+            leadModalOverlay.classList.remove('show');
+            document.body.style.overflow = '';
+        };
+
+        leadModalOverlay.addEventListener('click', (e) => {
+            if (e.target === leadModalOverlay) closeLeadModal();
+        });
+
+        document.getElementById('lead-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+            console.log('Лид-магнит:', data);
+
+            e.target.style.display = 'none';
+            document.getElementById('lead-success').classList.add('show');
         });
     </script>
 </body>
