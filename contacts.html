@@ -170,6 +170,109 @@
             h2 { font-size: 1.75rem; }
             .contact-form { padding: 32px 20px; }
         }
+
+        /* Баннер同意 на обработку ПД */
+        .pd-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            box-shadow: 0 -4px 20px rgba(11, 31, 58, 0.1);
+            padding: 20px 24px;
+            z-index: 3000;
+            display: none;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .pd-banner.show {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .pd-banner-content {
+            max-width: 1000px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .pd-banner p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .pd-banner a {
+            color: #12365F;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        .pd-banner-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 4px;
+        }
+
+        .pd-btn-accept {
+            background-color: #12365F;
+            color: #ffffff;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .pd-btn-accept:hover {
+            background-color: #1E4A7E;
+        }
+
+        .pd-btn-details {
+            background: transparent;
+            color: #475569;
+            padding: 10px 24px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+        }
+
+        .pd-btn-details:hover {
+            border-color: #12365F;
+            color: #12365F;
+        }
+
+        @media (max-width: 768px) {
+            .pd-banner {
+                padding: 16px 20px;
+            }
+            .pd-banner-content {
+                gap: 10px;
+            }
+            .pd-banner-actions {
+                flex-direction: column;
+                gap: 8px;
+                width: 100%;
+            }
+            .pd-btn-accept,
+            .pd-btn-details {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -290,6 +393,29 @@
             toast.classList.add('show');
             setTimeout(() => { toast.classList.remove('show'); }, 4000);
             form.reset();
+        });
+
+        // Баннер同意 на обработку ПД
+        const pdBanner = document.createElement('div');
+        pdBanner.className = 'pd-banner';
+        pdBanner.innerHTML = `
+            <div class="pd-banner-content">
+                <p>Продолжая использовать сайт, вы соглашаетесь на обработку персональных данных в соответствии с <a href="privacy-policy.html" target="_blank">Политикой конфиденциальности</a>.</p>
+                <div class="pd-banner-actions">
+                    <button class="pd-btn-accept">Принять</button>
+                    <a href="privacy-policy.html" class="pd-btn-details" target="_blank">Подробнее</a>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(pdBanner);
+
+        if (!localStorage.getItem('pd_accepted')) {
+            pdBanner.classList.add('show');
+        }
+
+        pdBanner.querySelector('.pd-btn-accept').addEventListener('click', () => {
+            localStorage.setItem('pd_accepted', 'true');
+            pdBanner.classList.remove('show');
         });
     </script>
 </body>
