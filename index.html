@@ -3,147 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>БухПартнет — Профессиональное бухгалтерское сопровождение и налоговый консалтинг</title>
-    <meta name="description" content="Полное бухгалтерское сопровождение для ИП и ООО от компании БухПартнет. Налоговая оптимизация, антикризисное управление и финансовая защита вашего бизнеса. Получите бесплатный аудит!">
-    <meta name="keywords" content="бухгалтерские услуги, бухгалтерское сопровождение, налоговая оптимизация, аудит, услуги для ИП, услуги для ООО, БухПартнет, финансовая защита бизнеса">
+    <title>БухПартнет — Профессиональное бухгалтерское сопровождение</title>
+    <meta name="description" content="Полное бухгалтерское сопровождение для ИП и ООО. Налоговая оптимизация, антикризисное управление и финансовая защита бизнеса.">
+    <meta name="keywords" content="бухгалтерские услуги, бухгалтерское сопровождение, налоговая оптимизация, аудит, услуги для ИП, услуги для ООО">
     <meta name="author" content="БухПартнет">
     <link rel="canonical" href="https://bukhpartner.ru/">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bukhpartner.ru/">
     <meta property="og:title" content="БухПартнет — Профессиональное бухгалтерское сопровождение">
-    <meta property="og:description" content="Передайте учет профессионалам. Налоговая оптимизация и финансовая защита вашего бизнеса. Закажите бесплатный аудит!">
+    <meta property="og:description" content="Передайте учет профессионалам. Налоговая оптимизация и финансовая защита вашего бизнеса.">
     <meta property="og:image" content="https://bukhpartner.ru/preview.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://bukhpartner.ru/">
     <meta property="twitter:title" content="БухПартнет — Ваш финансовый партнер">
-    <meta property="twitter:description" content="Полное бухгалтерское сопровождение для ИП и ООО. Налоговая оптимизация и защита от штрафов ФНС.">
+    <meta property="twitter:description" content="Полное бухгалтерское сопровождение для ИП и ООО.">
     <meta property="twitter:image" content="https://bukhpartner.ru/preview.jpg">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* --- Цветовая палитра --- */
+        /* --- Цветовая палитра (Строгий корпоративный стиль) --- */
         :root {
-            --color-dark-blue: #002B4D; /* Надежность */
-            --color-dark-blue-light: #0a3d6b;
-            --color-white: #ffffff;
-            --color-light-grey: #f4f7f9; /* Фон для "воздуха" */
-            --color-accent-emerald: #4CAF50; /* Рост, финансы (CTA) */
-            --color-accent-emerald-light: #e8f5e9;
-            --color-text-dark: #333333;
-            --color-text-grey: #666666;
-            --color-gradient: linear-gradient(135deg, #002B4D 0%, #0a3d6b 100%);
-            --shadow-soft: 0 4px 20px rgba(0, 43, 77, 0.08);
-            --shadow-hover: 0 8px 30px rgba(0, 43, 77, 0.15);
+            --color-primary-dark: #0B1F3A;      /* Глубокий темно-синий */
+            --color-primary: #12365F;           /* Корпоративный синий */
+            --color-primary-light: #1E4A7E;     /* Светлее синий */
+            --color-accent: #0E7490;            /* Акцентный сине-зеленый */
+            --color-white: #FFFFFF;
+            --color-bg: #F8FAFC;                /* Очень светло-серый фон */
+            --color-card: #FFFFFF;              /* Белые карточки */
+            --color-text-primary: #0F172A;      /* Почти черный для заголовков */
+            --color-text-secondary: #475569;    /* Серая для второстепенного текста */
+            --color-text-muted: #94A3B8;        /* Мутная серая */
+            --color-border: #E2E8F0;            /* Границы */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius: 12px;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* --- Общие стили и Типографика --- */
+        /* --- Сброс и типографика --- */
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.6;
-            color: var(--color-text-dark);
+            color: var(--color-text-primary);
             background-color: var(--color-white);
             margin: 0;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
         h1, h2, h3, h4 {
-            color: var(--color-dark-blue);
-            margin-top: 0;
+            color: var(--color-primary-dark);
             font-weight: 700;
+            letter-spacing: -0.025em;
         }
 
-        h1 { font-size: 3rem; font-weight: 800; line-height: 1.1; }
-        h2 { font-size: 2.2rem; text-align: center; margin-bottom: 40px; }
+        h1 { font-size: 3rem; line-height: 1.1; }
+        h2 { font-size: 2.25rem; text-align: center; margin-bottom: 48px; }
         h3 { font-size: 1.5rem; }
-        h4 { font-size: 1.2rem; }
+        h4 { font-size: 1.125rem; }
+
+        p {
+            color: var(--color-text-secondary);
+            margin-bottom: 16px;
+        }
 
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 24px;
             position: relative;
             z-index: 1;
         }
 
-        /* --- Декоративные элементы --- */
-        .section-divider {
-            position: relative;
-        }
-
-        .section-divider::after {
-            content: "";
-            position: absolute;
-            bottom: -1px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, var(--color-accent-emerald), transparent);
-            opacity: 0.3;
-        }
-
-        .decor-dot {
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            background: var(--color-accent-emerald);
-            border-radius: 50%;
-            opacity: 0.6;
-        }
-
-        /* --- Кнопки CTA --- */
-        .cta-button {
-            background-color: var(--color-accent-emerald);
+        /* --- Кнопки --- */
+        .btn-primary {
+            background-color: var(--color-primary);
             color: var(--color-white);
-            padding: 16px 32px;
+            padding: 14px 32px;
             border: none;
             border-radius: 8px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            transition: var(--transition);
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+            text-align: center;
         }
 
-        .cta-button:hover {
-            background-color: #388e3c;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+        .btn-primary:hover {
+            background-color: var(--color-primary-light);
+            transform: translateY(-1px);
         }
 
-        .cta-button:active {
-            transform: translateY(0);
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-primary);
+            padding: 14px 32px;
+            border: 2px solid var(--color-primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-primary);
+            color: var(--color-white);
         }
 
         /* --- Анимации --- */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(30px);
             transition: all 0.8s ease-out;
         }
 
@@ -154,9 +153,9 @@
 
         /* --- 1. Hero-блок --- */
         .hero {
-            background-color: var(--color-dark-blue);
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
             color: var(--color-white);
-            padding: 120px 0;
+            padding: 140px 0 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -165,69 +164,75 @@
         .hero::before {
             content: "";
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, transparent 70%);
-            z-index: 0;
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 1;
+            inset: 0;
+            background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            opacity: 0.5;
         }
 
         .hero h1 {
             color: var(--color-white);
             font-size: 3.5rem;
             margin-bottom: 24px;
+            position: relative;
+            z-index: 2;
         }
 
         .hero p {
-            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.25rem;
             margin-bottom: 40px;
-            max-width: 800px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero .btn-primary {
+            position: relative;
+            z-index: 2;
         }
 
         /* --- 2. Боли и решения --- */
         .benefits {
             padding: 100px 0;
-            background-color: var(--color-light-grey);
+            background-color: var(--color-bg);
         }
 
         .benefit-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
         }
 
         .benefit-item {
-            padding: 35px;
-            background: var(--color-white);
-            border-radius: 16px;
-            box-shadow: var(--shadow-soft);
-            text-align: left;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 43, 77, 0.05);
+            padding: 40px 32px;
+            background: var(--color-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
         }
 
         .benefit-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            border-color: rgba(76, 175, 80, 0.2);
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
         }
 
         .benefit-item h3 {
-            color: var(--color-dark-blue);
-            margin-bottom: 12px;
+            margin-bottom: 16px;
+            font-size: 1.25rem;
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        .benefit-item p {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
         }
 
         /* --- 3. Услуги --- */
@@ -238,128 +243,139 @@
 
         .service-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
         }
 
         .service-category {
-            border: 1px solid #e2e8f0;
-            padding: 40px;
-            border-radius: 16px;
-            transition: all 0.3s ease;
-            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            padding: 40px 32px;
+            border-radius: var(--radius);
+            background: var(--color-card);
+            transition: var(--transition);
         }
 
         .service-category:hover {
-            border-color: var(--color-accent-emerald);
-            box-shadow: var(--shadow-hover);
-            transform: translateY(-5px);
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-md);
         }
 
         .service-category h3 {
+            margin-bottom: 16px;
+            font-size: 1.25rem;
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 16px;
+        }
+
+        .service-category p {
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            color: var(--color-text-secondary);
         }
 
         .service-category ul {
             list-style: none;
             padding: 0;
-            margin: 20px 0 0 0;
+            margin: 0;
         }
 
         .service-category li {
-            margin-bottom: 10px;
-            padding-left: 25px;
+            margin-bottom: 12px;
+            padding-left: 24px;
             position: relative;
-            color: var(--color-text-dark);
+            font-size: 0.95rem;
+            color: var(--color-text-primary);
         }
 
         .service-category li::before {
-            content: "✓";
+            content: "";
             position: absolute;
             left: 0;
-            color: var(--color-accent-emerald);
-            font-weight: bold;
+            top: 6px;
+            width: 6px;
+            height: 6px;
+            background-color: var(--color-primary);
+            border-radius: 50%;
         }
 
         /* --- 4. Калькулятор --- */
         .calculator {
             padding: 100px 0;
-            background-color: var(--color-light-grey);
+            background-color: var(--color-bg);
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .calculator::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: linear-gradient(to bottom, var(--color-accent-emerald-light), transparent);
-            opacity: 0.3;
         }
 
         .calculator-form {
-            max-width: 650px;
-            margin: 0 auto 40px auto;
-            padding: 45px;
-            background: var(--color-white);
-            border-radius: 20px;
-            box-shadow: var(--shadow-hover);
-            border: 1px solid rgba(76, 175, 80, 0.1);
+            max-width: 700px;
+            margin: 0 auto 48px;
+            padding: 48px;
+            background: var(--color-card);
+            border-radius: 16px;
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-lg);
             text-align: left;
-            position: relative;
         }
 
-        .calculator-form label {
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--color-dark-blue);
+            font-size: 0.9rem;
+            color: var(--color-text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        .calculator-form select {
+        .form-group select {
             width: 100%;
-            padding: 14px;
-            margin-bottom: 20px;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
+            padding: 12px 16px;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
             font-size: 1rem;
             background: var(--color-white);
-            transition: all 0.3s ease;
-            cursor: pointer;
+            transition: var(--transition);
+            color: var(--color-text-primary);
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            background-size: 16px;
         }
 
-        .calculator-form select:focus {
+        .form-group select:focus {
             outline: none;
-            border-color: var(--color-accent-emerald);
-            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(18, 54, 95, 0.1);
         }
 
-        #calc-btn {
+        .btn-calc {
             width: 100%;
-            margin-top: 10px;
+            padding: 16px;
+            font-size: 1rem;
         }
 
         #calc-result {
-            margin-top: 25px;
-            padding: 20px;
+            margin-top: 32px;
+            padding: 24px;
             border-radius: 12px;
             display: none;
-            font-weight: bold;
-            font-size: 1.3rem;
-            color: var(--color-accent-emerald);
-            background: var(--color-accent-emerald-light);
-            border: 2px dashed var(--color-accent-emerald);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            background: rgba(18, 54, 95, 0.05);
+            border: 1px solid rgba(18, 54, 95, 0.1);
             text-align: center;
-            animation: fadeInUp 0.5s ease;
+            animation: fadeIn 0.5s ease;
+        }
+
+        #calc-result span {
+            color: var(--color-primary-dark);
         }
 
         /* --- 5. Тарифы --- */
@@ -371,32 +387,50 @@
         .tariff-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 24px;
         }
 
         .tariff-card {
-            background: var(--color-white);
-            border: 2px solid #e2e8f0;
-            padding: 40px 30px;
-            border-radius: 20px;
+            background: var(--color-card);
+            border: 1px solid var(--color-border);
+            padding: 48px 32px;
+            border-radius: 16px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             position: relative;
             display: flex;
             flex-direction: column;
         }
 
         .tariff-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--color-accent-emerald);
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
         }
 
-        .tariff-card.recommended {
-            border-color: var(--color-accent-emerald);
-            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.2);
-            transform: scale(1.03);
+        .tariff-card.featured {
+            border-color: var(--color-primary);
+            background: linear-gradient(180deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+            color: var(--color-white);
+            transform: scale(1.02);
             z-index: 2;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tariff-card.featured .tariff-price,
+        .tariff-card.featured h3,
+        .tariff-card.featured p,
+        .tariff-card.featured .btn-primary {
+            color: var(--color-white);
+        }
+
+        .tariff-card.featured .btn-primary {
+            background-color: var(--color-white);
+            color: var(--color-primary-dark);
+        }
+
+        .tariff-card.featured .btn-primary:hover {
+            background-color: rgba(255, 255, 255, 0.9);
         }
 
         .tariff-badge {
@@ -404,77 +438,83 @@
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--color-accent-emerald);
+            background: var(--color-accent);
             color: white;
-            padding: 6px 16px;
+            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.05em;
         }
 
         .tariff-card h3 {
-            color: var(--color-dark-blue);
-            margin-bottom: 12px;
+            margin-bottom: 16px;
+            font-size: 1.5rem;
         }
 
         .tariff-card p {
-            color: var(--color-text-grey);
-            margin-bottom: 20px;
             font-size: 0.95rem;
+            margin-bottom: 32px;
+            flex-grow: 1;
+            line-height: 1.6;
         }
 
-        .price {
-            font-size: 2.2rem;
+        .tariff-price {
+            font-size: 2.5rem;
             font-weight: 800;
-            color: var(--color-accent-emerald);
-            margin: 15px 0 25px 0;
+            color: var(--color-primary-dark);
+            margin-bottom: 8px;
             display: block;
         }
 
-        .price span {
+        .tariff-price span {
             font-size: 1rem;
             font-weight: 400;
-            color: var(--color-text-grey);
+            color: var(--color-text-muted);
         }
 
         /* --- 6. Гарантии --- */
         .guarantees {
             padding: 100px 0;
-            background-color: var(--color-light-grey);
+            background-color: var(--color-bg);
         }
 
         .guarantee-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
         }
 
         .guarantee-item {
-            padding: 35px;
-            background: var(--color-white);
-            border-left: 4px solid var(--color-dark-blue);
-            border-radius: 0 12px 12px 0;
-            box-shadow: var(--shadow-soft);
-            text-align: left;
-            transition: all 0.3s ease;
+            padding: 40px 32px;
+            background: var(--color-card);
+            border-left: 4px solid var(--color-primary);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
         }
 
         .guarantee-item:hover {
-            border-left-color: var(--color-accent-emerald);
-            transform: translateX(5px);
-            box-shadow: var(--shadow-hover);
+            border-left-color: var(--color-accent);
+            box-shadow: var(--shadow-md);
+            transform: translateX(4px);
         }
 
         .guarantee-item h4 {
-            color: var(--color-dark-blue);
-            font-size: 1.2rem;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            font-size: 1.125rem;
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        .guarantee-item p {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin: 0;
         }
 
         /* --- 7. Кейсы и цифры --- */
@@ -486,97 +526,112 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+            gap: 32px;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 64px;
         }
 
         .stat-box {
-            padding: 30px;
-            background: var(--color-light-grey);
-            border-radius: 16px;
-            transition: all 0.3s ease;
+            padding: 32px;
+            background: var(--color-bg);
+            border-radius: var(--radius);
+            transition: var(--transition);
         }
 
         .stat-box:hover {
-            background: var(--color-accent-emerald-light);
-            transform: translateY(-5px);
+            background: var(--color-border);
+            transform: translateY(-4px);
         }
 
         .stat-box h3 {
-            font-size: 3.5rem;
-            color: var(--color-accent-emerald);
+            font-size: 3rem;
+            color: var(--color-primary);
             margin-bottom: 8px;
         }
 
+        .stat-box p {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+
         .case-story {
-            margin-top: 50px;
-            border-left: 5px solid var(--color-dark-blue);
-            padding-left: 30px;
-            background: rgba(0, 43, 77, 0.02);
-            border-radius: 0 12px 12px 0;
-            padding: 30px;
+            border-left: 4px solid var(--color-primary);
+            padding: 40px 40px 40px 48px;
+            background: var(--color-bg);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .case-story h3 {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
+            font-size: 1.25rem;
+        }
+
+        .case-story p {
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        .case-story strong {
+            color: var(--color-primary-dark);
+            font-weight: 700;
         }
 
         /* --- 8. Команда --- */
         .team {
             padding: 100px 0;
-            background-color: var(--color-light-grey);
+            background-color: var(--color-bg);
         }
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
         }
 
         .team-member {
             text-align: center;
-            background: var(--color-white);
-            padding: 30px 20px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-soft);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 43, 77, 0.05);
+            background: var(--color-card);
+            padding: 32px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--color-border);
+            transition: var(--transition);
         }
 
         .team-member:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-            border-color: rgba(76, 175, 80, 0.2);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
         }
 
         .team-member img {
-            width: 140px;
-            height: 140px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
-            border: 4px solid var(--color-accent-emerald-light);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--color-border);
         }
 
         .team-member h3 {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             margin-bottom: 8px;
         }
 
         .team-member p {
             margin: 4px 0;
             font-size: 0.9rem;
-            color: var(--color-text-grey);
+            color: var(--color-text-secondary);
         }
 
         .team-member p:nth-child(4) {
-            color: var(--color-accent-emerald);
+            color: var(--color-primary);
             font-weight: 600;
         }
 
@@ -588,33 +643,36 @@
 
         .faq-item {
             margin-bottom: 16px;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            text-align: left;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
             overflow: hidden;
-            transition: all 0.3s ease;
-            background: var(--color-white);
+            transition: var(--transition);
+            background: var(--color-card);
         }
 
         .faq-item:hover {
-            border-color: var(--color-accent-emerald);
-            box-shadow: var(--shadow-soft);
+            border-color: var(--color-primary);
         }
 
         .faq-question {
             padding: 20px 24px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: var(--color-light-grey);
+            background: transparent;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: var(--color-bg);
         }
 
         .faq-question span {
-            font-size: 1.5rem;
-            color: var(--color-accent-emerald);
+            font-size: 1.25rem;
+            color: var(--color-primary);
             transition: transform 0.3s ease;
         }
 
@@ -623,24 +681,24 @@
             max-height: 0;
             overflow: hidden;
             transition: all 0.3s ease;
-            background: var(--color-white);
+            background: var(--color-card);
         }
 
         .faq-answer.active {
-            max-height: 600px;
-            padding: 0 24px 20px 24px;
-            border-top: 1px solid #e2e8f0;
+            max-height: 500px;
+            padding: 0 24px 20px;
+            border-top: 1px solid var(--color-border);
         }
 
         .faq-answer p {
             margin: 0;
             font-size: 0.95rem;
-            color: var(--color-text-dark);
+            color: var(--color-text-secondary);
         }
 
         /* --- 10. Футер и Финальный CTA --- */
         .footer-cta {
-            background: var(--color-gradient);
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
             color: var(--color-white);
             padding: 100px 0;
             text-align: center;
@@ -655,7 +713,7 @@
             right: -100px;
             width: 300px;
             height: 300px;
-            background: rgba(76, 175, 80, 0.1);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
         }
 
@@ -665,38 +723,45 @@
             margin-bottom: 16px;
         }
 
-        .footer-cta .cta-button {
-            box-shadow: 0 4px 20px rgba(76, 175, 80, 0.4);
-        }
-
-        .footer-cta .cta-button:hover {
-            box-shadow: 0 6px 24px rgba(76, 175, 80, 0.5);
+        .footer-cta p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 32px;
+            font-size: 1.1rem;
         }
 
         .footer {
-            background-color: #0a1a2b;
-            color: #888;
+            background-color: var(--color-primary-dark);
+            color: rgba(255, 255, 255, 0.6);
             padding: 40px 0;
             font-size: 0.9rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer a {
-            color: var(--color-accent-emerald);
+            color: var(--color-primary-light);
             text-decoration: none;
         }
 
         .footer a:hover {
+            color: var(--color-white);
             text-decoration: underline;
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
         }
 
         /* --- Адаптивность --- */
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
-            h2 { font-size: 1.8rem; }
-            .hero { padding: 80px 0; }
-            .calculator-form { padding: 30px 20px; }
-            .tariff-card.recommended { transform: scale(1); }
+            h2 { font-size: 1.75rem; }
+            .hero { padding: 100px 0 80px; }
+            .calculator-form { padding: 32px 24px; }
+            .tariff-card.featured { transform: scale(1); }
         }
     </style>
 </head>
@@ -705,185 +770,160 @@
     <!-- 1. HERO-БЛОК -->
     <header class="hero">
         <div class="container">
-            <h1>БухПартнет: Ваш бизнес без налоговых рисков и штрафов.</h1>
-            <p>Передайте учет профессионалам. Мы берем на себя всю бюрократию, чтобы вы сосредоточились на росте, а не на ФНС.</p>
-            <a href="#calculator" class="cta-button">➡️ Получить бесплатный экспресс-аудит</a>
+            <h1>Ваш бизнес под надежной финансовой защитой</h1>
+            <p>Профессиональное бухгалтерское сопровождение для ИП и ООО. Мы берем на себя учет, налоги и взаимодействие с ФНС.</p>
+            <a href="#calculator" class="btn-primary">Рассчитать стоимость услуг</a>
         </div>
     </header>
 
     <!-- 2. БЛОК «БОЛИ И РЕШЕНИЯ» -->
-    <section class="benefits section-divider">
+    <section class="benefits">
         <div class="container">
-            <h2 class="reveal">Мы знаем ваши боли. Мы предлагаем работающее решение.</h2>
-            <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: var(--color-text-grey);">БухПартнет — ваш надежный партнер, который превращает бухгалтерскую головную боль в уверенный бизнес-рост.</p>
-
+            <h2>Решаем ваши бухгалтерские задачи</h2>
             <div class="benefit-grid">
                 <div class="benefit-item reveal">
-                    <h3>📉 Дорогостоящая штатная бухгалтерия</h3>
-                    <p>Зарплата, налоги, отпускные, оборудование — постоянно растущие расходы, которые съедают прибыль.</p>
-                    <p style="margin-top: 15px; font-weight: 600; color: var(--color-accent-emerald);">✅ Экономия до 50% бюджета.</p>
+                    <h3>Экономия бюджета</h3>
+                    <p>Вы платите только за нужные услуги, без расходов на зарплату, отпускные и оборудование штатного бухгалтера.</p>
                 </div>
                 <div class="benefit-item reveal">
-                    <h3>😨 Постоянный страх перед ФНС</h3>
-                    <p>Один неверный отчет или пропущенный срок — и бизнес под угрозой блокировки счетов и огромных штрафов.</p>
-                    <p style="margin-top: 15px; font-weight: 600; color: var(--color-accent-emerald);">🛡️ Гарантия юридической чистоты.</p>
+                    <h3>Юридическая чистота</h3>
+                    <p>Отчетность сдается точно в срок. Мы несем финансовую ответственность за ошибки нашей команды.</p>
                 </div>
                 <div class="benefit-item reveal">
-                    <h3>🚫 Непредсказуемость учета</h3>
-                    <p>Отпуск, болезнь или уход специалиста — и ваш бизнес останавливается. Учет не может ждать.</p>
-                    <p style="margin-top: 15px; font-weight: 600; color: var(--color-accent-emerald);">🔄 Стабильность 24/7.</p>
+                    <h3>Стабильность 24/7</h3>
+                    <p>Учет не останавливается при болезни или увольнении сотрудника. Ваш бизнес работает непрерывно.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 3. УСЛУГИ -->
-    <section class="services section-divider">
+    <section class="services">
         <div class="container">
-            <h2 class="reveal">БухПартнет: Комплексное сопровождение под ваш бизнес.</h2>
-            <p style="text-align: center; margin-bottom: 50px; font-size: 1.1rem; color: var(--color-text-grey);">Независимо от формы регистрации, мы обеспечим идеальную финансовую чистоту.</p>
-
+            <h2>Наши услуги</h2>
             <div class="service-list">
                 <div class="service-category reveal">
-                    <h3>💼 Для ИП</h3>
-                    <p style="color: var(--color-text-grey); margin-bottom: 16px;">Отчетность по УСН/Патент. Первичный учет. Легальная оптимизация для микробизнеса.</p>
-                    <ul style="list-style: none; padding: 0; margin-top: 15px;">
+                    <h3>Для ИП</h3>
+                    <p>Отчетность по УСН и патенту, первичный учет, налоговый консалтинг для микробизнеса.</p>
+                    <ul>
                         <li>Полное сопровождение (УСН, Патент)</li>
                         <li>Кадровый учет (при наличии сотрудников)</li>
                         <li>Налоговый консалтинг</li>
                     </ul>
                 </div>
                 <div class="service-category reveal">
-                    <h3>🏢 Для ООО</h3>
-                    <p style="color: var(--color-text-grey); margin-bottom: 16px;">Полное ведение учета, сложная отчетность, работа с разными системами налогообложения (ОСНО, УСН).</p>
-                    <ul style="list-style: none; padding: 0; margin-top: 15px;">
+                    <h3>Для ООО</h3>
+                    <p>Ведение учета, сложная отчетность, работа с ОСНО и УСН, антикризисное управление.</p>
+                    <ul>
                         <li>Полный цикл сопровождения</li>
                         <li>Налоговая оптимизация и аудит</li>
                         <li>Антикризисное реагирование</li>
                     </ul>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="#calculator" class="cta-button reveal">Рассчитать мой пакет услуг</a>
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="#calculator" class="btn-primary">Рассчитать мой пакет услуг</a>
             </div>
         </div>
     </section>
 
-    <!-- 4. ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР -->
-    <section class="calculator section-divider" id="calculator">
+    <!-- 4. КАЛЬКУЛЯТОР -->
+    <section class="calculator" id="calculator">
         <div class="container">
-            <h2 class="reveal">Сколько стоит ваше спокойствие? Узнайте ориентировочную цену.</h2>
-            <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: var(--color-text-grey);">Точный расчет требует диалога, но этот калькулятор даст вам представление о ценах БухПартнет.</p>
-
+            <h2 class="reveal">Ориентировочная стоимость обслуживания</h2>
             <div class="calculator-form reveal">
-                <label for="form-type">Выберите формат:</label>
-                <select id="form-type">
-                    <option value="ip">ИП</option>
-                    <option value="ooo">ООО</option>
-                </select>
-
-                <label for="form-tax">Система налогообложения:</label>
-                <select id="form-tax">
-                    <option value="usn">УСН 6%/15%</option>
-                    <option value="patent">Патент</option>
-                    <option value="osno">ОСНО</option>
-                </select>
-
-                <label for="form-staff">Количество сотрудников:</label>
-                <select id="form-staff">
-                    <option value="1-5">1-5</option>
-                    <option value="6-15">6-15</option>
-                    <option value="15+">15+</option>
-                </select>
-
-                <label for="form-ops">Примерный объем операций в месяц:</label>
-                <select id="form-ops">
-                    <option value="do-50">До 50</option>
-                    <option value="50-150">50-150</option>
-                    <option value="150+">150+</option>
-                </select>
-
-                <button class="cta-button" id="calc-btn" style="width: 100%; margin-top: 10px;">⚙️ Рассчитать ориентировочный пакет</button>
-                <div id="calc-result" style="margin-top: 25px; padding: 20px; border-radius: 12px; display: none; font-weight: bold; font-size: 1.3rem; color: var(--color-accent-emerald); background: var(--color-accent-emerald-light); border: 2px dashed var(--color-accent-emerald); text-align: center;">
+                <div class="form-group">
+                    <label for="form-type">Форма бизнеса</label>
+                    <select id="form-type">
+                        <option value="ip">Индивидуальный предприниматель (ИП)</option>
+                        <option value="ooo">Общество с ограниченной ответственностью (ООО)</option>
+                    </select>
                 </div>
-                <p style="margin-top: 20px; font-size: 0.9rem; color: var(--color-text-grey);">*Укажите контакты, чтобы зафиксировать ориентировочную цену!</p>
+                <div class="form-group">
+                    <label for="form-tax">Система налогообложения</label>
+                    <select id="form-tax">
+                        <option value="usn">УСН 6% / 15%</option>
+                        <option value="patent">Патентная система</option>
+                        <option value="osno">ОСНО</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="form-staff">Количество сотрудников</label>
+                    <select id="form-staff">
+                        <option value="1-5">1–5 человек</option>
+                        <option value="6-15">6–15 человек</option>
+                        <option value="15+">15+ человек</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="form-ops">Операций в месяц</label>
+                    <select id="form-ops">
+                        <option value="do-50">До 50 операций</option>
+                        <option value="50-150">50–150 операций</option>
+                        <option value="150+">150+ операций</option>
+                    </select>
+                </div>
+                <button class="btn-primary btn-calc" id="calc-btn">Рассчитать стоимость</button>
+                <div id="calc-result">
+                    Ориентировочная стоимость: <span id="result-price"></span> в месяц
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 5. ТАРИФЫ -->
-    <section class="tariffs section-divider">
+    <section class="tariffs">
         <div class="container">
-            <h2 class="reveal">Выбирайте свой уровень доверия.</h2>
-            <p style="text-align: center; margin-bottom: 50px; font-size: 1.1rem; color: var(--color-text-grey);">Мы предлагаем гибкие решения, чтобы цена соответствовала вашему масштабу.</p>
-
+            <h2>Тарифные планы</h2>
             <div class="tariff-grid">
-                <!-- Старт -->
                 <div class="tariff-card reveal">
                     <h3>Старт</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-grey);">Для ИП, начало пути.</p>
-                    <p>Отчетность (УСН/Патент), первичный учет.</p>
-                    <span class="price">от <span>5 000</span> руб./мес.</span>
-                    <a href="#" class="cta-button" style="padding: 12px 24px; font-size: 0.95rem;">Выбрать</a>
+                    <p>Для ИП на начальном этапе. Отчетность, первичный учет.</p>
+                    <span class="tariff-price">от <span>5 000</span> руб./мес.</span>
+                    <a href="#" class="btn-primary">Выбрать тариф</a>
                 </div>
-                <!-- Базовый (Рекомендуемый) -->
-                <div class="tariff-card recommended reveal">
-                    <div class="tariff-badge">Популярный</div>
-                    <h3>Базовый</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-accent-emerald); font-weight: 600;">Ваш надежный фундамент.</p>
-                    <p>Базовый учет + Полный Кадры + Консультации.</p>
-                    <span class="price">от <span>15 000</span> руб./мес.</span>
-                    <a href="#" class="cta-button" style="padding: 12px 24px; font-size: 0.95rem;">🌟 Выбрать</a>
-                </div>
-                <!-- Бизнес -->
-                <div class="tariff-card reveal">
+                <div class="tariff-card featured reveal">
+                    <div class="tariff-badge">Рекомендуемый</div>
                     <h3>Бизнес</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-grey);">Активный рост.</p>
-                    <p>Все из Базового + Налоговый аудит, оптимизация, контроль ФНС.</p>
-                    <span class="price">от <span>35 000</span> руб./мес.</span>
-                    <a href="#" class="cta-button" style="padding: 12px 24px; font-size: 0.95rem;">Выбрать</a>
+                    <p>Для растущих компаний. Полный учет, кадры, налоговая оптимизация.</p>
+                    <span class="tariff-price">от <span>15 000</span> руб./мес.</span>
+                    <a href="#" class="btn-primary">Выбрать тариф</a>
                 </div>
-                <!-- Индивидуальный -->
                 <div class="tariff-card reveal">
-                    <h3>Индивидуальный</h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-grey);">Максимальная безопасность.</p>
-                    <p>Полный комплекс + Внешний аудит, эксклюзивные решения.</p>
-                    <span class="price" style="color: var(--color-text-grey);">Индивидуально</span>
-                    <a href="#" class="cta-button" style="padding: 12px 24px; font-size: 0.95rem;">Обсудить проект</a>
+                    <h3>Корпоративный</h3>
+                    <p>Для крупного бизнеса. Полный комплекс + внешний аудит, контроль ФНС.</p>
+                    <span class="tariff-price">от <span>35 000</span> руб./мес.</span>
+                    <a href="#" class="btn-primary">Выбрать тариф</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 6. ГАРАНТИИ -->
-    <section class="guarantees section-divider">
+    <section class="guarantees">
         <div class="container">
-            <h2 class="reveal">Наш договор — ваша броня.</h2>
-            <p style="text-align: center; margin-bottom: 50px; font-size: 1.1rem; color: var(--color-text-grey);">БухПартнет не просто выполняет работу, мы гарантируем ее законность и качество.</p>
-
+            <h2>Наши гарантии</h2>
             <div class="guarantee-grid">
                 <div class="guarantee-item reveal">
-                    <h4>🛡️ Полная финансовая ответственность</h4>
-                    <p>Если ошибка нашей команды привела к штрафу, мы компенсируем его вам. Мы несем риск.</p>
+                    <h4>Финансовая ответственность</h4>
+                    <p>При ошибке нашей команды, приведшей к штрафу, мы компенсируем его вам.</p>
                 </div>
                 <div class="guarantee-item reveal">
-                    <h4>🔒 Конфиденциальность 100%</h4>
-                    <p>Мы работаем строго по NDA. Ваши коммерческие данные и финансовая информация остаются в полной тайне.</p>
+                    <h4>Конфиденциальность</h4>
+                    <p>Работаем строго по NDA. Ваши данныеprotected и не передаются третьим лицам.</p>
                 </div>
                 <div class="guarantee-item reveal">
-                    <h4>✅ Страхование профессиональной ответственности</h4>
-                    <p>Ваш бизнес защищен профессиональными гарантиями. Мы застрахованы на случай непредвиденных ситуаций.</p>
+                    <h4>Страхование рисков</h4>
+                    <p>Профессиональное страхование ответственности на случай непредвиденных ситуаций.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 7. КЕЙСЫ И ЦИФРЫ -->
-    <section class="cases section-divider">
+    <section class="cases">
         <div class="container">
-            <h2 class="reveal">Доказанные результаты от БухПартнет.</h2>
-            <p style="text-align: center; margin-bottom: 50px; font-size: 1.1rem; color: var(--color-text-grey);">Мы не говорим о цифрах. Мы их даем.</p>
-
+            <h2>Наши результаты</h2>
             <div class="stats-grid">
                 <div class="stat-box reveal">
                     <h3>12+</h3>
@@ -891,74 +931,69 @@
                 </div>
                 <div class="stat-box reveal">
                     <h3>300+</h3>
-                    <p>Обслуживаемых клиентов</p>
+                    <p>Клиентов</p>
                 </div>
                 <div class="stat-box reveal">
                     <h3>0</h3>
                     <p>Проигранных споров с ФНС</p>
                 </div>
             </div>
-
             <div class="case-story reveal">
-                <h3>📖 Реальный кейс: Как мы спасли ООО "ТехноСтарт" от закрытия.</h3>
-                <p><strong style="color: var(--color-dark-blue);">Проблема:</strong> Хаос в документах, риск проверки ФНС и угроза штрафов из-за некорректного ведения учета.</p>
-                <p><strong style="color: var(--color-dark-blue);">Решение БухПартнет:</strong> Провели экспресс-аудит, восстановили учет за 6 месяцев и подготовили компанию к аудиту.</p>
-                <p style="font-weight: 600; margin-top: 15px;"><strong style="color: var(--color-dark-blue);">Результат:</strong> Прошли проверку без замечаний. Снижение налоговой нагрузки на 15%.</p>
+                <h3>Кейс: Восстановление учета ООО «ТехноСтарт»</h3>
+                <p><strong>Задача:</strong> Хаос в документах, риск проверки ФНС, угроза блокировки счетов.</p>
+                <p><strong>Решение:</strong> Экспресс-аудит, восстановление учета за 6 месяцев, подготовка к налоговой проверке.</p>
+                <p><strong>Результат:</strong> Проверка пройдена без замечаний. Налоговая нагрузка снижена на 15%.</p>
             </div>
         </div>
     </section>
 
     <!-- 8. КОМАНДА -->
-    <section class="team section-divider">
+    <section class="team">
         <div class="container">
-            <h2 class="reveal">За БухПартнетом стоят люди.</h2>
-            <p style="text-align: center; margin-bottom: 50px; font-size: 1.1rem; color: var(--color-text-grey);">В нашей команде работают сертифицированные эксперты, которые любят свою работу и знают законы не по учебникам, а по практике.</p>
-
+            <h2>Команда экспертов</h2>
             <div class="team-grid">
                 <div class="team-member reveal">
-                    <img src="https://via.placeholder.com/140" alt="Эксперт 1">
+                    <img src="https://via.placeholder.com/120" alt="Эксперт">
                     <h3>Иван Петров</h3>
                     <p>Главный эксперт по УСН</p>
-                    <p>15 лет стажа. Специализация: Налоговая оптимизация.</p>
+                    <p>15 лет стажа · Налоговая оптимизация</p>
                 </div>
                 <div class="team-member reveal">
-                    <img src="https://via.placeholder.com/140" alt="Эксперт 2">
+                    <img src="https://via.placeholder.com/120" alt="Эксперт">
                     <h3>Елена Сидорова</h3>
                     <p>Ведущий бухгалтер</p>
-                    <p>10 лет стажа. Специализация: Кадровый учет и ЗП.</p>
+                    <p>10 лет стажа · Кадровый учет и ЗП</p>
                 </div>
                 <div class="team-member reveal">
-                    <img src="https://via.placeholder.com/140" alt="Эксперт 3">
+                    <img src="https://via.placeholder.com/120" alt="Эксперт">
                     <h3>Дмитрий Козлов</h3>
                     <p>Антикризисный менеджер</p>
-                    <p>7 лет стажа. Специализация: Взаимодействие с ФНС.</p>
+                    <p>7 лет стажа · Взаимодействие с ФНС</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 9. FAQ -->
-    <section class="faq section-divider">
+    <section class="faq">
         <div class="container">
-            <h2 class="reveal">Ваши вопросы — наши ответы.</h2>
-            <p style="text-align: center; margin-bottom: 50px; font-size: 1.1rem; color: var(--color-text-grey);">Всё, что нужно знать перед тем, как начать работать с БухПартнетом.</p>
-
+            <h2>Часто задаваемые вопросы</h2>
             <div class="faq-item reveal">
-                <div class="faq-question">Как происходит передача документов? <span>+</span></div>
+                <div class="faq-question">Как передаются документы? <span>+</span></div>
                 <div class="faq-answer">
-                    <p>Мы настроим удобный рабочий чат или интеграцию с облачным хранилищем. Вам не нужно ничего пересылать по почте — все документы находятся в единой системе.</p>
+                    <p>Через защищенный рабочий чат или облачное хранилище. Все документы в единой системе.</p>
                 </div>
             </div>
             <div class="faq-item reveal">
-                <div class="faq-question">В какой программе работаете? <span>+</span></div>
+                <div class="faq-question">В каких программах вы работаете? <span>+</span></div>
                 <div class="faq-answer">
-                    <p>Мы работаем в 1С, Контур, СБИС и готовы интегрироваться с вашей текущей системой. Мы подстраиваемся под ваш рабочий процесс, а не наоборот.</p>
+                    <p>1С, Контур, СБИС. Готовы интегрироваться с вашей текущей системой.</p>
                 </div>
             </div>
             <div class="faq-item reveal">
-                <div class="faq-question">Что делать, если налоговая прислала требование? <span>+</span></div>
+                <div class="faq-question">Что делать, если пришло требование от налоговой? <span>+</span></div>
                 <div class="faq-answer">
-                    <p>Сразу же передайте его нам. Наши эксперты возьмут дело в работу и ответят на требование в установленные сроки, минимизируя риски и избегая штрафов.</p>
+                    <p>Передайте нам сразу. Мы ответим в установленные сроки и minimizirovame риски штрафов.</p>
                 </div>
             </div>
         </div>
@@ -967,25 +1002,23 @@
     <!-- 10. ФИНАЛЬНЫЙ CTA И ФУТЕР -->
     <section class="footer-cta reveal">
         <div class="container">
-            <h2>Перестаньте думать о бухгалтерии. Позвольте БухПартнету позаботиться об этом.</h2>
-            <p>Начните с бесплатной консультации и диагностики вашего текущего учета.</p>
-            <a href="https://t.me/bukhpartner_demo" class="cta-button" style="padding: 18px 40px; font-size: 1.2rem;">🚀 Записаться на консультацию</a>
+            <h2>Перестаньте тратить время на бухгалтерию</h2>
+            <p>Доверьте учет профессионалам и сосредоточьтесь на развитии бизнеса.</p>
+            <a href="https://t.me/bukhpartner_demo" class="btn-primary" style="padding: 18px 40px; font-size: 1.1rem;">Записаться на консультацию</a>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+        <div class="container">
+            <div>&copy; 2026 БухПартнет. Все права защищены.</div>
             <div>
-                &copy; 2026 БухПартнет. Все права защищены.
-            </div>
-            <div>
-                Контакты: +7 (495) 123-45-67 | <a href="mailto:info@bukhpartner.ru">info@bukhpartner.ru</a> | г. Москва, ул. Финансовая, д. 10
+                +7 (495) 123-45-67 | <a href="mailto:info@bukhpartner.ru">info@bukhpartner.ru</a> | г. Москва
             </div>
         </div>
     </footer>
 
     <script>
-        // JavaScript для работы FAQ
+        // FAQ аккордеон
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
@@ -996,14 +1029,12 @@
                     icon.textContent = '+';
                     icon.style.transform = 'rotate(0deg)';
                 } else {
-                    // Закрыть все остальные
                     document.querySelectorAll('.faq-answer.active').forEach(activeAnswer => {
                         activeAnswer.classList.remove('active');
                         activeAnswer.previousElementSibling.querySelector('span').textContent = '+';
                         activeAnswer.previousElementSibling.querySelector('span').style.transform = 'rotate(0deg)';
                     });
 
-                    // Открыть текущий
                     answer.classList.add('active');
                     icon.textContent = '–';
                     icon.style.transform = 'rotate(180deg)';
@@ -1011,9 +1042,10 @@
             });
         });
 
-        // Логика калькулятора
+        // Калькулятор
         const calcBtn = document.getElementById('calc-btn');
         const calcResult = document.getElementById('calc-result');
+        const resultPrice = document.getElementById('result-price');
 
         calcBtn.addEventListener('click', () => {
             const type = document.getElementById('form-type').value;
@@ -1021,24 +1053,20 @@
             const staff = document.getElementById('form-staff').value;
             const ops = document.getElementById('form-ops').value;
 
-            // Базовая цена
             let basePrice = (type === 'ip') ? 5000 : 15000;
 
-            // Коэффициенты налогов
             const taxMultipliers = {
                 'usn': 1.0,
                 'patent': 0.8,
                 'osno': 2.0
             };
 
-            // Коэффициенты сотрудников
             const staffMultipliers = {
                 '1-5': 1.0,
                 '6-15': 1.5,
                 '15+': 2.5
             };
 
-            // Коэффициенты операций
             const opsMultipliers = {
                 'do-50': 1.0,
                 '50-150': 1.3,
@@ -1047,21 +1075,18 @@
 
             let finalPrice = basePrice * taxMultipliers[tax] * staffMultipliers[staff] * opsMultipliers[ops];
 
-            // Форматирование цены
             const formattedPrice = new Intl.NumberFormat('ru-RU', {
                 style: 'currency',
                 currency: 'RUB',
                 maximumFractionDigits: 0
             }).format(finalPrice);
 
-            calcResult.textContent = `Ориентировочная стоимость: ${formattedPrice}`;
+            resultPrice.textContent = formattedPrice;
             calcResult.style.display = 'block';
-            
-            // Плавная прокрутка к результату
             calcResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
 
-        // Анимация появления элементов при скролле
+        // Анимация при скролле
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
