@@ -121,15 +121,39 @@
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
             display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
             text-align: center;
         }
 
+        .btn-primary::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
         .btn-primary:hover {
-            background-color: var(--color-primary-light);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(18, 54, 95, 0.3);
+        }
+
+        .btn-primary:hover::before {
+            opacity: 1;
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
         }
 
         .btn-secondary {
@@ -141,15 +165,105 @@
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
             display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
             text-align: center;
         }
 
+        .btn-secondary::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--color-primary);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
         .btn-secondary:hover {
-            background-color: var(--color-primary);
-            color: var(--color-white);
+            color: #fff;
+            border-color: var(--color-primary);
+        }
+
+        .btn-secondary:hover::before {
+            left: 0;
+        }
+
+        /* --- Дополнительные эффекты кнопок (CSS FX Lab) --- */
+        .btn-slide {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-slide::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width 0.3s ease;
+        }
+
+        .btn-slide:hover::after {
+            width: 100%;
+        }
+
+        .btn-glow {
+            position: relative;
+        }
+
+        .btn-glow::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(14, 116, 144, 0.3) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn-glow:hover::after {
+            opacity: 1;
+        }
+
+        .btn-border-reveal {
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .btn-border-reveal::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border: 2px solid var(--color-accent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn-border-reveal:hover::before {
+            opacity: 1;
+        }
+
+        /* --- Эффект для кнопки калькулятора --- */
+        .btn-calc {
+            width: 100%;
+            padding: 16px;
+            font-size: 1rem;
         }
 
         /* --- Анимации --- */
@@ -1231,7 +1345,7 @@
         <div class="container">
             <h1>Ваш бизнес под надежной финансовой защитой</h1>
             <p>Профессиональное бухгалтерское сопровождение для ИП и ООО. Мы берем на себя учет, налоги и взаимодействие с ФНС.</p>
-            <a href="#calculator" class="btn-primary">Рассчитать стоимость услуг</a>
+            <a href="#calculator" class="btn-primary btn-glow">Рассчитать стоимость услуг</a>
             <a href="#" class="btn-primary" style="margin-left: 16px; background: transparent; border: 2px solid rgba(255,255,255,0.5); color: #fff;" onclick="event.preventDefault(); openLeadModal()">Получить чек-лист бесплатно</a>
         </div>
     </header>
@@ -1282,7 +1396,7 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 48px;">
-                <a href="#calculator" class="btn-primary">Рассчитать мой пакет услуг</a>
+                <a href="#calculator" class="btn-primary btn-slide">Рассчитать мой пакет услуг</a>
             </div>
         </div>
     </section>
@@ -1323,7 +1437,7 @@
                         <option value="150+">150+ операций</option>
                     </select>
                 </div>
-                <button class="btn-primary btn-calc" id="calc-btn">Рассчитать стоимость</button>
+                <button class="btn-primary btn-calc btn-slide" id="calc-btn">Рассчитать стоимость</button>
                 <div id="calc-result">
                     Ориентировочная стоимость: <span id="result-price"></span> в месяц
                 </div>
@@ -1340,20 +1454,20 @@
                     <h3>Старт</h3>
                     <p>Для ИП на начальном этапе. Отчетность, первичный учет.</p>
                     <span class="tariff-price">от <span>15 000</span> руб./мес.</span>
-                    <a href="#" class="btn-primary">Выбрать тариф</a>
+                    <a href="#" class="btn-primary btn-border-reveal">Выбрать тариф</a>
                 </div>
                 <div class="tariff-card featured reveal">
                     <div class="tariff-badge">Рекомендуемый</div>
                     <h3>Бизнес</h3>
                     <p>Для растущих компаний. Полный учет, кадры, налоговая оптимизация.</p>
                     <span class="tariff-price">от <span>45 000</span> руб./мес.</span>
-                    <a href="#" class="btn-primary">Выбрать тариф</a>
+                    <a href="#" class="btn-primary btn-border-reveal">Выбрать тариф</a>
                 </div>
                 <div class="tariff-card reveal">
                     <h3>Корпоративный</h3>
                     <p>Для крупного бизнеса. Полный комплекс + внешний аудит, контроль ФНС.</p>
                     <span class="tariff-price">от <span>95 000</span> руб./мес.</span>
-                    <a href="#" class="btn-primary">Выбрать тариф</a>
+                    <a href="#" class="btn-primary btn-border-reveal">Выбрать тариф</a>
                 </div>
             </div>
         </div>
@@ -1488,7 +1602,7 @@
                             Я согласен на обработку персональных данных. <a href="privacy-policy.html">Политика конфиденциальности</a>
                         </label>
                     </div>
-                    <button type="submit" class="btn-primary" style="width: 100%;">Отправить заявку</button>
+                    <button type="submit" class="btn-primary btn-slide" style="width: 100%;">Отправить заявку</button>
                 </form>
             </div>
         </div>
@@ -1499,7 +1613,7 @@
         <div class="container">
             <h2>Перестаньте тратить время на бухгалтерию</h2>
             <p>Доверьте учет профессионалам и сосредоточьтесь на развитии бизнеса.</p>
-            <a href="https://t.me/buhpartner" class="btn-primary" style="padding: 18px 40px; font-size: 1.1rem;">Записаться на консультацию</a>
+            <a href="https://t.me/buhpartner" class="btn-primary btn-glow" style="padding: 18px 40px; font-size: 1.1rem;">Записаться на консультацию</a>
         </div>
     </section>
 

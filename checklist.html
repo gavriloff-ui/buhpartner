@@ -65,11 +65,81 @@
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.25s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
             display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
-        .btn-primary:hover { background-color: #1E4A7E; transform: translateY(-1px); }
+
+        .btn-primary::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #0E7490 0%, #12365F 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(18, 54, 95, 0.3);
+        }
+
+        .btn-primary:hover::before {
+            opacity: 1;
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        /* --- Дополнительные эффекты кнопок (CSS FX Lab) --- */
+        .btn-slide {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-slide::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #0E7490;
+            transition: width 0.3s ease;
+        }
+
+        .btn-slide:hover::after {
+            width: 100%;
+        }
+
+        .btn-glow {
+            position: relative;
+        }
+
+        .btn-glow::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(14, 116, 144, 0.3) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn-glow:hover::after {
+            opacity: 1;
+        }
 
         /* Контент */
         .checklist-section { padding: 100px 0; background: #F8FAFC; }
@@ -154,7 +224,7 @@
         <div class="container">
             <h1>Бесплатный чек-лист</h1>
             <p>Как подготовить документы к налоговой проверке и избежать штрафов — пошаговая инструкция от БухПартнер.</p>
-            <a href="https://buhpartner.ru/" class="btn-primary">← Вернуться на главную</a>
+            <a href="https://buhpartner.ru/" class="btn-primary btn-slide">← Вернуться на главную</a>
         </div>
     </header>
 
@@ -223,7 +293,7 @@
             <div class="cta-box">
                 <h2>Нужен разбор ваших документов?</h2>
                 <p>Оставьте заявку — и наши эксперты помогут подготовиться к проверке без рисков.</p>
-                <a href="contacts.html" class="btn-primary">Записаться на консультацию</a>
+                <a href="contacts.html" class="btn-primary btn-glow">Записаться на консультацию</a>
             </div>
         </div>
     </section>

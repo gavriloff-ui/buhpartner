@@ -65,11 +65,103 @@
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.25s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
             display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
-        .btn-primary:hover { background-color: #1E4A7E; transform: translateY(-1px); }
+
+        .btn-primary::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #0E7490 0%, #12365F 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(18, 54, 95, 0.3);
+        }
+
+        .btn-primary:hover::before {
+            opacity: 1;
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        /* --- Дополнительные эффекты кнопок (CSS FX Lab) --- */
+        .btn-slide {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-slide::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #0E7490;
+            transition: width 0.3s ease;
+        }
+
+        .btn-slide:hover::after {
+            width: 100%;
+        }
+
+        .btn-glow {
+            position: relative;
+        }
+
+        .btn-glow::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(14, 116, 144, 0.3) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn-glow:hover::after {
+            opacity: 1;
+        }
+
+        .btn-border-reveal {
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .btn-border-reveal::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border: 2px solid #0E7490;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn-border-reveal:hover::before {
+            opacity: 1;
+        }
 
         /* Контент */
         .contacts-section { padding: 100px 0; background: #F8FAFC; }
@@ -151,8 +243,49 @@
         .checkbox-group input { width: auto; margin-top: 3px; }
         .checkbox-group label { font-size: 0.85rem; color: #475569; line-height: 1.5; margin-bottom: 0; text-transform: none; letter-spacing: normal; }
         .checkbox-group a { color: #12365F; text-decoration: underline; }
-        .btn-submit { width: 100%; padding: 16px; font-size: 1rem; background: #12365F; color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.25s ease; }
-        .btn-submit:hover { background: #1E4A7E; }
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            font-size: 1rem;
+            background: #12365F;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-submit::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #0E7490 0%, #12365F 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(18, 54, 95, 0.3);
+        }
+
+        .btn-submit:hover::before {
+            opacity: 1;
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
 
         /* Тост */
         .toast {
@@ -281,7 +414,7 @@
         <div class="container">
             <h1>Свяжитесь с нами</h1>
             <p>Офис БухПартнет в Великом Новгороде. Мы ответим на ваши вопросы и поможем подобрать тариф.</p>
-            <a href="tel:+79506808866" class="btn-primary">Позвонить: +7 (950) 680-88-66</a>
+            <a href="tel:+79506808866" class="btn-primary btn-glow">Позвонить: +7 (950) 680-88-66</a>
         </div>
     </header>
 
@@ -370,7 +503,7 @@
                                 Я согласен на обработку персональных данных. <a href="privacy-policy.html">Политика конфиденциальности</a>
                             </label>
                         </div>
-                        <button type="submit" class="btn-submit">Отправить сообщение</button>
+                        <button type="submit" class="btn-submit btn-slide">Отправить сообщение</button>
                     </form>
                 </div>
             </div>
