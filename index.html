@@ -295,7 +295,6 @@
             padding: 30px 0;
             font-size: 0.9rem;
         }
-
     </style>
 </head>
 <body>
@@ -401,12 +400,13 @@
                     <option value="150+">150+</option>
                 </select>
 
-                <button class="cta-button" style="width: 100%; margin-top: 10px;">⚙️ Рассчитать ориентировочный пакет</button>
+                <button class="cta-button" id="calc-btn" style="width: 100%; margin-top: 10px;">⚙️ Рассчитать ориентировочный пакет</button>
+                <div id="calc-result" style="margin-top: 20px; padding: 15px; border-radius: 5px; display: none; font-weight: bold; font-size: 1.2rem; color: var(--color-accent-emerald); border: 1px dashed var(--color-accent-emerald);">
+                </div>
                 <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">*Укажите контакты, чтобы зафиксировать ориентировочную цену!</p>
             </div>
         </div>
     </section>
-
 
     <!-- 5. ТАРИФЫ -->
     <section class="tariffs">
@@ -420,7 +420,7 @@
                     <h3>Старт</h3>
                     <p style="font-size: 0.9rem; color: #666;">Для ИП, начало пути.</p>
                     <p>Отчетность (УСН/Патент), первичный учет.</p>
-                    <div class="price">от [X] руб.</div>
+                    <div class="price">от 5 000 руб.</div>
                     <a href="#" class="cta-button">Выбрать</a>
                 </div>
                 <!-- Базовый (Рекомендуемый) -->
@@ -428,7 +428,7 @@
                     <h3>Базовый</h3>
                     <p style="font-size: 0.9rem; color: var(--color-accent-emerald); font-weight: 600;">Ваш надежный фундамент.</p>
                     <p>Базовый учет + Полный Кадры + Консультации.</p>
-                    <div class="price">от [Y] руб.</div>
+                    <div class="price">от 15 000 руб.</div>
                     <a href="#" class="cta-button">🌟 Выбрать</a>
                 </div>
                 <!-- Бизнес -->
@@ -436,7 +436,7 @@
                     <h3>Бизнес</h3>
                     <p style="font-size: 0.9rem; color: #666;">Активный рост.</p>
                     <p>Все из Базового + Налоговый аудит, оптимизация, контроль ФНС.</p>
-                    <div class="price">от [Z] руб.</div>
+                    <div class="price">от 35 000 руб.</div>
                     <a href="#" class="cta-button">Выбрать</a>
                 </div>
                 <!-- Индивидуальный -->
@@ -497,9 +497,9 @@
 
             <div class="case-story">
                 <h3>📖 Реальный кейс: Как мы спасли ООО "ТехноСтарт" от закрытия.</h3>
-                <p><strong>Проблема:</strong> Хаос в документах, риск проверки ФНС и угроза штрафов из-за некорректного ведения учета.</p>
-                <p><strong>Решение БухПартнет:</strong> Провели экспресс-аудит, восстановили учет за 6 месяцев и подготовили компанию к аудиту.</p>
-                <p style="font-weight: 600;"><strong>Результат:</strong> Прошли проверку без замечаний. Снижение налоговой нагрузки на 15%.</p>
+                <p><strong style="color: var(--color-dark-blue);">Проблема:</strong> Хаос в документах, риск проверки ФНС и угроза штрафов из-за некорректного ведения учета.</p>
+                <p><strong style="color: var(--color-dark-blue);">Решение БухПартнет:</strong> Провели экспресс-аудит, восстановили учет за 6 месяцев и подготовили компанию к аудиту.</p>
+                <p style="font-weight: 600;"><strong style="color: var(--color-dark-blue);">Результат:</strong> Прошли проверку без замечаний. Снижение налоговой нагрузки на 15%.</p>
             </div>
         </div>
     </section>
@@ -512,19 +512,19 @@
 
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="placeholder.jpg" alt="Эксперт 1">
+                    <img src="https://via.placeholder.com/150" alt="Эксперт 1">
                     <h3>Иван Петров</h3>
                     <p style="color: var(--color-accent-emerald);">Главный эксперт по УСН</p>
                     <p style="font-size: 0.9rem;">15 лет стажа. Специализация: Налоговая оптимизация.</p>
                 </div>
                 <div class="team-member">
-                    <img src="placeholder.jpg" alt="Эксперт 2">
+                    <img src="https://via.placeholder.com/150" alt="Эксперт 2">
                     <h3>Елена Сидорова</h3>
                     <p style="color: var(--color-accent-emerald);">Ведущий бухгалтер</p>
                     <p style="font-size: 0.9rem;">10 лет стажа. Специализация: Кадровый учет и ЗП.</p>
                 </div>
                 <div class="team-member">
-                    <img src="placeholder.jpg" alt="Эксперт 3">
+                    <img src="https://via.placeholder.com/150" alt="Эксперт 3">
                     <h3>Дмитрий Козлов</h3>
                     <p style="color: var(--color-accent-emerald);">Антикризисный менеджер</p>
                     <p style="font-size: 0.9rem;">7 лет стажа. Специализация: Взаимодействие с ФНС.</p>
@@ -565,7 +565,7 @@
         <div class="container">
             <h2>Перестаньте думать о бухгалтерии. Позвольте БухПартнету позаботиться об этом.</h2>
             <p>Начните с бесплатной консультации и диагностики вашего текущего учета.</p>
-            <a href="#" class="cta-button" style="padding: 18px 40px; font-size: 1.2rem;">🚀 Записаться на консультацию</a>
+            <a href="https://t.me/bukhpartner_demo" class="cta-button" style="padding: 18px 40px; font-size: 1.2rem;">🚀 Записаться на консультацию</a>
         </div>
     </section>
 
@@ -575,7 +575,7 @@
                 &copy; 2026 БухПартнет. Все права защищены.
             </div>
             <div>
-                Контакты: +7 (XXX) XXX-XX-XX | info@bukhpartner.ru
+                Контакты: +7 (495) 123-45-67 | info@bukhpartner.ru | г. Москва, ул. Финансовая, д. 10
             </div>
         </div>
     </footer>
@@ -596,12 +596,62 @@
                         activeAnswer.classList.remove('active');
                         activeAnswer.previousElementSibling.querySelector('span').textContent = '+';
                     });
-                    
+
                     // Открыть текущий
                     answer.classList.add('active');
                     icon.textContent = '–';
                 }
             });
+        });
+
+        // Логика калькулятора
+        const calcBtn = document.getElementById('calc-btn');
+        const calcResult = document.getElementById('calc-result');
+
+        calcBtn.addEventListener('click', () => {
+            const type = document.getElementById('form-type').value;
+            const tax = document.getElementById('form-tax').value;
+            const staff = document.getElementById('form-staff').value;
+            const ops = document.getElementById('form-ops').value;
+
+            // Базовая цена
+            let basePrice = (type === 'ip') ? 5000 : 15000;
+
+            // Коэффициенты налогов
+            const taxMultipliers = {
+                'usn': 1.0,
+                'patent': 0.8,
+                'osno': 2.0
+            };
+
+            // Коэффициенты сотрудников
+            const staffMultipliers = {
+                '1-5': 1.0,
+                '6-15': 1.5,
+                '15+': 2.5
+            };
+
+            // Коэффициенты операций
+            const opsMultipliers = {
+                'do-50': 1.0,
+                '50-150': 1.3,
+                '150+': 1.8
+            };
+
+            let finalPrice = basePrice * taxMultipliers[tax] * staffMultipliers[staff] * opsMultipliers[ops];
+
+            // Форматирование цены
+            const formattedPrice = new Intl.NumberFormat('ru-RU', {
+                style: 'currency',
+                currency: 'RUB',
+                maximumFractionDigits: 0
+            }).format(finalPrice);
+
+            calcResult.textContent = `Ориентировочная стоимость: ${formattedPrice}`;
+            calcResult.style.display = 'block';
+            
+            // Плавная прокрутка к результату
+            calcResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
     </script>
 </body>
