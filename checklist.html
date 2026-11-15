@@ -53,8 +53,28 @@
             background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
             opacity: 0.5;
         }
-        .hero h1 { color: #fff; font-size: 3.5rem; margin-bottom: 24px; position: relative; z-index: 2; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 24px; position: relative; z-index: 2; }
         .hero p { color: rgba(255,255,255,0.85); font-size: 1.25rem; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; position: relative; z-index: 2; }
+
+        /* --- Shimmer Text Effect --- */
+        .shimmer-text {
+            background: linear-gradient(
+                90deg,
+                #ffffff 25%,
+                rgba(255, 255, 255, 0.4) 50%,
+                #ffffff 75%
+            );
+            background-size: 200% auto;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% center; }
+            100% { background-position: -200% center; }
+        }
 
         .btn-primary {
             background-color: #12365F;
@@ -222,7 +242,7 @@
 
     <header class="hero">
         <div class="container">
-            <h1>Бесплатный чек-лист</h1>
+            <h1 class="shimmer-text">Бесплатный чек-лист</h1>
             <p>Как подготовить документы к налоговой проверке и избежать штрафов — пошаговая инструкция от БухПартнер.</p>
             <a href="https://buhpartner.ru/" class="btn-primary btn-slide">← Вернуться на главную</a>
         </div>

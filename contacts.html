@@ -287,6 +287,26 @@
             transform: translateY(0);
         }
 
+        /* --- Shimmer Text Effect --- */
+        .shimmer-text {
+            background: linear-gradient(
+                90deg,
+                #ffffff 25%,
+                rgba(255, 255, 255, 0.4) 50%,
+                #ffffff 75%
+            );
+            background-size: 200% auto;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% center; }
+            100% { background-position: -200% center; }
+        }
+
         /* Тост */
         .toast {
             position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px);
@@ -412,7 +432,7 @@
 
     <header class="hero">
         <div class="container">
-            <h1>Свяжитесь с нами</h1>
+            <h1 class="shimmer-text">Свяжитесь с нами</h1>
             <p>Офис БухПартнет в Великом Новгороде. Мы ответим на ваши вопросы и поможем подобрать тариф.</p>
             <a href="tel:+79506808866" class="btn-primary btn-glow">Позвонить: +7 (950) 680-88-66</a>
         </div>
