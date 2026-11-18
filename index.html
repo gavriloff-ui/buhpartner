@@ -1788,25 +1788,25 @@
             <h2 class="reveal">Оставьте заявку на консультацию</h2>
             <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: var(--color-text-secondary);">Мы свяжемся с вами в течение 15 минут в рабочее время.</p>
             <div class="application-form reveal">
-                <form id="application-form">
+                <form id="application-form" data-lead-form data-source="Заявка на консультацию (главная)">
                     <div class="form-group">
                         <label for="app-name">Имя</label>
-                        <input type="text" id="app-name" placeholder="Иван Иванов" required>
+                        <input type="text" id="app-name" name="name" placeholder="Иван Иванов" required>
                     </div>
                     <div class="form-group">
                         <label for="app-phone">Телефон</label>
-                        <input type="tel" id="app-phone" placeholder="+7 900 000 00 00" required>
+                        <input type="tel" id="app-phone" name="phone" placeholder="+7 900 000 00 00" required>
                     </div>
                     <div class="form-group">
                         <label for="app-email">E-mail</label>
-                        <input type="email" id="app-email" placeholder="ivan@example.ru">
+                        <input type="email" id="app-email" name="email" placeholder="ivan@example.ru">
                     </div>
                     <div class="form-group">
                         <label for="app-message">Комментарий</label>
-                        <textarea id="app-message" placeholder="Расскажите о вашем бизнесе и задачах"></textarea>
+                        <textarea id="app-message" name="message" placeholder="Расскажите о вашем бизнесе и задачах"></textarea>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="app-agree" required>
+                        <input type="checkbox" id="app-agree" name="agree" required>
                         <label for="app-agree">
                             Я согласен на обработку персональных данных. <a href="privacy-policy.html">Политика конфиденциальности</a>
                         </label>
@@ -1915,28 +1915,7 @@
             calcResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
 
-        // Форма заявки
-        const appForm = document.getElementById('application-form');
-        const toast = document.getElementById('toast');
-
-        appForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const formData = new FormData(appForm);
-            const data = Object.fromEntries(formData.entries());
-
-            // Здесь можно добавить отправку на сервер (fetch/AJAX)
-            console.log('Заявка:', data);
-
-            // Показать уведомление
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 4000);
-
-            // Сбросить форму
-            appForm.reset();
-        });
+        // Формы заявок отправляются через js/forms.js (общий обработчик)
 
         // Анимация при скролле
         const observerOptions = {
@@ -1956,7 +1935,7 @@
             observer.observe(el);
         });
 
-        // Баннер同意 на обработку ПД
+        // Баннер согласия на обработку ПД
         const pdBanner = document.createElement('div');
         pdBanner.className = 'pd-banner';
         pdBanner.innerHTML = `
@@ -1990,21 +1969,21 @@
                     <p>Как подготовить документы к налоговой проверке и избежать штрафов</p>
                 </div>
                 <div class="lead-modal-body">
-                    <form id="lead-form">
+                    <form id="lead-form" data-lead-form data-source="Лид-магнит: чек-лист" data-success="lead">
                         <div class="form-group">
                             <label for="lead-name">Имя</label>
-                            <input type="text" id="lead-name" placeholder="Иван Иванов" required>
+                            <input type="text" id="lead-name" name="name" placeholder="Иван Иванов" required>
                         </div>
                         <div class="form-group">
                             <label for="lead-email">E-mail</label>
-                            <input type="email" id="lead-email" placeholder="ivan@example.ru" required>
+                            <input type="email" id="lead-email" name="email" placeholder="ivan@example.ru" required>
                         </div>
                         <div class="form-group">
                             <label for="lead-phone">Телефон</label>
-                            <input type="tel" id="lead-phone" placeholder="+7 900 000 00 00">
+                            <input type="tel" id="lead-phone" name="phone" placeholder="+7 900 000 00 00">
                         </div>
                         <div class="checkbox-group">
-                            <input type="checkbox" id="lead-agree" required>
+                            <input type="checkbox" id="lead-agree" name="agree" required>
                             <label for="lead-agree">
                                 Я согласен на обработку персональных данных. <a href="privacy-policy.html" target="_blank">Политика конфиденциальности</a>
                             </label>
@@ -2036,15 +2015,10 @@
             if (e.target === leadModalOverlay) closeLeadModal();
         });
 
-        document.getElementById('lead-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData.entries());
-            console.log('Лид-магнит:', data);
-
-            e.target.style.display = 'none';
-            document.getElementById('lead-success').classList.add('show');
-        });
+        // Отправка формы лид-магнита — общий обработчик в js/forms.js
+        // (показывает #lead-success после успешной отправки)
     </script>
+
+    <script src="js/forms.js" defer></script>
 </body>
 </html>

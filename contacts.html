@@ -576,25 +576,25 @@
 
                 <div class="contact-form">
                     <h2>Напишите нам</h2>
-                    <form id="contact-form">
+                    <form id="contact-form" data-lead-form data-source="Форма обратной связи (контакты)">
                         <div class="form-group">
                             <label for="ct-name">Имя</label>
-                            <input type="text" id="ct-name" placeholder="Иван Иванов" required>
+                            <input type="text" id="ct-name" name="name" placeholder="Иван Иванов" required>
                         </div>
                         <div class="form-group">
                             <label for="ct-phone">Телефон</label>
-                            <input type="tel" id="ct-phone" placeholder="+7 900 000 00 00" required>
+                            <input type="tel" id="ct-phone" name="phone" placeholder="+7 900 000 00 00" required>
                         </div>
                         <div class="form-group">
                             <label for="ct-email">E-mail</label>
-                            <input type="email" id="ct-email" placeholder="ivan@example.ru">
+                            <input type="email" id="ct-email" name="email" placeholder="ivan@example.ru">
                         </div>
                         <div class="form-group">
                             <label for="ct-message">Сообщение</label>
-                            <textarea id="ct-message" placeholder="Расскажите о вашей задаче"></textarea>
+                            <textarea id="ct-message" name="message" placeholder="Расскажите о вашей задаче"></textarea>
                         </div>
                         <div class="checkbox-group">
-                            <input type="checkbox" id="ct-agree" required>
+                            <input type="checkbox" id="ct-agree" name="agree" required>
                             <label for="ct-agree">
                                 Я согласен на обработку персональных данных. <a href="privacy-policy.html">Политика конфиденциальности</a>
                             </label>
@@ -610,21 +610,9 @@
     <div class="toast" id="toast">Сообщение отправлено. Мы свяжемся с вами!</div>
 
     <script>
-        const form = document.getElementById('contact-form');
-        const toast = document.getElementById('toast');
+        // Отправка формы — общий обработчик в js/forms.js
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-            console.log('Сообщение:', data);
-
-            toast.classList.add('show');
-            setTimeout(() => { toast.classList.remove('show'); }, 4000);
-            form.reset();
-        });
-
-        // Баннер同意 на обработку ПД
+        // Баннер согласия на обработку ПД
         const pdBanner = document.createElement('div');
         pdBanner.className = 'pd-banner';
         pdBanner.innerHTML = `
@@ -647,5 +635,7 @@
             pdBanner.classList.remove('show');
         });
     </script>
+
+    <script src="js/forms.js" defer></script>
 </body>
 </html>
