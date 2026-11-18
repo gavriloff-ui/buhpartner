@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="БухПартнер">
+  <!-- Только знак (иконка) — для аватаров, соцсетей, мелких носителей -->
+  <rect x="8" y="8" width="64" height="64" rx="14" fill="#12365F"/>
+  <text x="40" y="47" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="38" font-weight="800" fill="#FFFFFF" text-anchor="middle">Б</text>
+  <rect x="22" y="55" width="36" height="5" rx="2.5" fill="#0E7490"/>
+</svg>

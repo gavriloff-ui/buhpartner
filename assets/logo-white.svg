@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" role="img" aria-label="БухПартнер — бухгалтерское сопровождение">
+  <!-- Инверсная версия логотипа для тёмных фонов (hero, баннеры, превью) -->
+  <g>
+    <rect x="8" y="8" width="64" height="64" rx="14" fill="#FFFFFF"/>
+    <text x="40" y="47" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="38" font-weight="800" fill="#12365F" text-anchor="middle">Б</text>
+    <rect x="22" y="55" width="36" height="5" rx="2.5" fill="#0E7490"/>
+    <text x="88" y="42" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="31" font-weight="800" fill="#FFFFFF" letter-spacing="-0.5">БухПартнер</text>
+    <text x="89" y="65" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13.5" font-weight="500" fill="rgba(255,255,255,0.75)" letter-spacing="1.2">бухгалтерское сопровождение</text>
+  </g>
+</svg>

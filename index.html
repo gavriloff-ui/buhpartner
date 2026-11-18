@@ -3,29 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>БухПартнет — Профессиональное бухгалтерское сопровождение</title>
+    <title>БухПартнер — Профессиональное бухгалтерское сопровождение</title>
     <meta name="description" content="Полное бухгалтерское сопровождение для ИП и ООО. Налоговая оптимизация, антикризисное управление и финансовая защита бизнеса.">
     <meta name="keywords" content="бухгалтерские услуги, бухгалтерское сопровождение, налоговая оптимизация, аудит, услуги для ИП, услуги для ООО">
-    <meta name="author" content="БухПартнет">
+    <meta name="author" content="БухПартнер">
     <link rel="canonical" href="https://bukhpartner.ru/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bukhpartner.ru/">
-    <meta property="og:title" content="БухПартнет — Профессиональное бухгалтерское сопровождение">
+    <meta property="og:title" content="БухПартнер — Профессиональное бухгалтерское сопровождение">
     <meta property="og:description" content="Передайте учет профессионалам. Налоговая оптимизация и финансовая защита вашего бизнеса.">
-    <meta property="og:image" content="https://bukhpartner.ru/preview.jpg">
+    <meta property="og:image" content="https://buhpartner.ru/preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="БухПартнер">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://bukhpartner.ru/">
-    <meta property="twitter:title" content="БухПартнет — Ваш финансовый партнер">
+    <meta property="twitter:title" content="БухПартнер — Ваш финансовый партнер">
     <meta property="twitter:description" content="Полное бухгалтерское сопровождение для ИП и ООО.">
     <meta property="twitter:image" content="https://buhpartner.ru/preview.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 fill=%22%2312365F%22 rx=%226%22/><text x=%2216%22 y=%2222%22 font-family=%22Arial%22 font-size=%2220%22 font-weight=%22bold%22 fill=%22%23fff%22 text-anchor=%22middle%22>Б</text></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 fill=%22%2312365F%22 rx=%226%22/><text x=%2216%22 y=%2222%22 font-family=%22Arial%22 font-size=%2220%22 font-weight=%22bold%22 fill=%22%23fff%22 text-anchor=%22middle%22>Б</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -102,7 +105,7 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "ООО «БухПартнер»",
-        "image": "https://buhpartner.ru/favicon.svg",
+        "image": "https://buhpartner.ru/preview.jpg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Большая Санкт-Петербургская ул, дом 39, строение 8",
@@ -474,6 +477,24 @@
         }
 
         /* --- 1. Hero-блок --- */
+        /* --- Фирменный логотип в hero --- */
+        .hero-brand {
+            margin-bottom: 32px;
+        }
+
+        .hero-brand img {
+            height: 64px;
+            width: auto;
+            display: inline-block;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+        }
+
+        @media (max-width: 768px) {
+            .hero-brand img {
+                height: 44px;
+            }
+        }
+
         .hero {
             background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
             color: var(--color-white);
@@ -1552,6 +1573,9 @@
     <!-- 1. HERO-БЛОК -->
     <header class="hero">
         <div class="container">
+            <div class="hero-brand">
+                <img src="assets/logo-white.svg" alt="БухПартнер — бухгалтерское сопровождение" width="300" height="71">
+            </div>
             <h1 class="shimmer-text">Ваш бизнес под надежной финансовой защитой</h1>
             <p>Профессиональное бухгалтерское сопровождение для ИП и ООО. Мы берем на себя учет, налоги и взаимодействие с ФНС.</p>
             <a href="#calculator" class="btn-primary btn-glow">Рассчитать стоимость услуг</a>
@@ -1828,7 +1852,7 @@
 
     <footer class="footer">
         <div class="container">
-            <div>&copy; 2026 БухПартнет. Все права защищены.</div>
+            <div>&copy; 2026 БухПартнер. Все права защищены.</div>
             <div>
                 +7 (950) 680-88-66 | <a href="mailto:info@buhpartner.ru">info@buhpartner.ru</a> | г. Великий Новгород | <a href="contacts.html">Контакты</a>
             </div>
