@@ -75,7 +75,6 @@
   function trackGoal(goal, params) {
     try {
       if (typeof window.ym === 'function') window.ym(20397475, 'reachGoal', goal, params || {});
-      if (typeof window.gtag === 'function') window.gtag('event', goal, params || {});
     } catch (e) { /* noop */ }
   }
 
