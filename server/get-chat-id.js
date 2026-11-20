@@ -35,6 +35,7 @@ if (!TOKEN) {
 const CA = fs.readFileSync(path.join(__dirname, 'certs', 'russian_trusted_root_ca_pem.crt'));
 
 function get(pathname) {
+  if (!pathname.startsWith('/')) pathname = '/' + pathname;
   return new Promise((resolve, reject) => {
     const req = https.request(
       {
@@ -69,7 +70,7 @@ function get(pathname) {
 
   let marker;
   for (let i = 0; i < 3; i++) {
-    const q = `updates?limit=10&timeout=90${marker != null ? `&marker=${marker}` : ''}`;
+    const q = `/updates?limit=10&timeout=90${marker != null ? `&marker=${marker}` : ''}`;
     const updates = await get(q);
     const list = (updates && updates.updates) || [];
 
