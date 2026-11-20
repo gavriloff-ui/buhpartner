@@ -65,35 +65,49 @@ function get(pathname) {
 }
 
 (async () => {
-  console.log('Ожидаю события от бота (long polling, до 90 сек)...');
-  console.log('Если ещё не делали — напишите боту в MAX и нажмите «Начать».\n');
+  console.log('Ожидаю события от бота (long polling, до 90 сек за ожидание)...');
+  console.log('⚠ Нажмите «Начать» боту ИМЕННО ВО ВРЕМЯ ожидания (или впервые — после старта скрипта).');
+  console.log('   Скрипт проработает до ~9 минут.\n');
 
   let marker;
-  for (let i = 0; i < 3; i++) {
-    const q = `/updates?limit=10&timeout=90${marker != null ? `&marker=${marker}` : ''}`;
+  for (let i = 1; i <= 6; i++) {
+    const q = `/updates?limit=100&timeout=90${marker != null ? `&marker=${marker}` : ''}`;
     const updates = await get(q);
     const list = (updates && updates.updates) || [];
+    if (updates && updates.marker != null) marker = updates.marker;
+
+    if (!list.length) {
+      console.log(`  ...событий нет (окно ${i}/6), продолжаю ждать`);
+      continue;
+    }
 
     for (const u of list) {
-      if (u.type === 'bot_started') {
-        console.log('✅ Бот запущен!');
-        console.log('   chat_id:', u.object.chat_id ?? u.object.chat?.chat_id ?? '(см. объект ниже)');
-        console.log('   user_id:', u.object.user_id ?? u.object.user?.user_id ?? '');
-        console.log('   Объект:', JSON.stringify(u.object, null, 2));
+      // Поле discriminator по схеме — update_type, типы через подчёркивание
+      console.log(`  ← событие: ${u.update_type}`);
+
+      if (u.update_type === 'bot_started') {
+        console.log('✅ Бот запущен (нажат «Начать»)!');
+        console.log('   chat_id:', u.chat_id);
+        console.log('   user_id:', u.user && u.user.user_id);
+        console.log('   Данные:', JSON.stringify({ chat_id: u.chat_id, user: u.user }, null, 2));
         console.log('\nЗапишите chat_id в server/.env как MAX_CHAT_ID=...');
         process.exit(0);
       }
-      if (u.type === 'message.created') {
-        const r = u.object.recipient || {};
-        console.log('📨 Сообщение получено. chat_id:', r.chat_id, '| user_id:', r.user_id);
-        console.log('   (этот chat_id тоже подходит — запишите в MAX_CHAT_ID)');
+      if (u.update_type === 'message_created') {
+        const r = (u.message && u.message.recipient) || {};
+        const s = (u.message && u.message.sender) || {};
+        console.log('📨 Сообщение получено.');
+        console.log('   chat_id:', r.chat_id, '| sender user_id:', s.user_id);
+        console.log('   (этот chat_id подходит — запишите в MAX_CHAT_ID)');
         process.exit(0);
       }
     }
-    if (updates && updates.marker != null) marker = updates.marker;
-    if (!list.length) console.log('  ...событий нет, продолжаю ждать');
+    console.log(`  (получено событий: ${list.length}, ищу нужные среди них...)`);
   }
-  console.log('Событий не получено. Убедитесь, что нажали «Начать» боту, и запустите снова.');
+  console.log('\nСобытий не получено. Проверьте:');
+  console.log('  1) нажали «Начать» именно пока скрипт ждал (не до и не после);');
+  console.log('  2) сообщение отправлено ТОМУ ЖЕ боту, чей токен в server/.env;');
+  console.log('  3) затем запустите скрипт снова.');
   process.exit(1);
 })().catch((e) => {
   console.error('Ошибка:', e.message);
