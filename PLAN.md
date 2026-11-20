@@ -44,7 +44,7 @@
 | B10 | `robots.txt` содержал пустую строку `Disallow:` — **✅ исправлено** | `robots.txt` |
 | B11 | Комментарий-мусор `// Баннер同意 на обработку ПД` (китайские иероглифы) — **✅ исправлено** в `index.html` и `contacts.html` | `index.html:1959`, `contacts.html:627` |
 | B12 | ~~Нет файлов `preview.jpg` и `favicon.svg`~~ — **✅ созданы**: `preview.jpg` (1200×630, фирменное превью) и `favicon.svg` (знак «Б»), все 5 страниц переведены на файловый фавикон вместо data-URI | корень репозитория |
-| B13 | Google Fonts грузится с `display=swap`, но нет `preconnect` для `fonts.gstatic.com` | `index.html:31` |
+| B13 | Google Fonts грузился без `preconnect` — **✅ исправлено**: добавлены `preconnect` на `fonts.googleapis.com` и `fonts.gstatic.com` (с `crossorigin`) на всех 4 страницах со шрифтами | `index.html`, `contacts.html`, `checklist.html`, `404.html` | Шрифты начинают грузиться на пару сотен мс раньше |
 
 ---
 
